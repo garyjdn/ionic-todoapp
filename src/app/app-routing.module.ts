@@ -9,12 +9,14 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
+    loadChildren: './my-to-do/my-to-do.module#MyToDoPageModule'
   },
   {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  }
+    path: 'completed',
+    loadChildren: './completed-to-do/completed-to-do.module#CompletedToDoPageModule'
+  },
+  // { path: 'my-to-do', loadChildren: './my-to-do/my-to-do.module#MyToDoPageModule' },
+  // { path: 'completed-to-do', loadChildren: './completed-to-do/completed-to-do.module#CompletedToDoPageModule' },
 ];
 
 @NgModule({

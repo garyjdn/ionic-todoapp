@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>CompletedToDo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" *ngFor="let item of todo">
+        <ion-checkbox slot="start" checked="{{ item.completed }}" (click)="toggleCheck(item.id)"></ion-checkbox>
+        {{item.name}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
