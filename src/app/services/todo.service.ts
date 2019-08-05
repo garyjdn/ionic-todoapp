@@ -32,6 +32,8 @@ export class TodoService {
     }
   ];
 
+  private newList: ToDo;
+
   constructor() { }
 
   getAllToDoList() {
@@ -46,6 +48,14 @@ export class TodoService {
         return item.id === id;
       })
     };
+  }
+
+  addItem(name: string, detail: string){
+    const id = parseInt(this.toDoList[(this.toDoList.length - 1)].id, 10) + 1;
+    const stringId = id.toString();
+    this.newList = {id: stringId, name, detail, completed: false};
+    this.toDoList.push(this.newList);
+    return this.getAllToDoList();
   }
 
   updateItem(id: string, name: string, detail: string) {

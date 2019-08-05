@@ -1,0 +1,7 @@
+{
+  "appId": "com.vibedevtest.todoapp",
+  "appName": "ToDoApp",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

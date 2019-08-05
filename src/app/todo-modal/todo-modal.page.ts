@@ -33,11 +33,16 @@ export class TodoModalPage {
   }
 
   saveTodo() {
-    console.log(this.taskName, this.taskDetail);
+    // console.log(this.taskName, this.taskDetail);
     // console.log(this.navParams.get('idProp'), this.navParams.get('nameProp'), this.navParams.get('detailProp'));
-    this.todoService.updateItem(this.navParams.get('idProp'), this.taskName, this.taskDetail);
+    // console.log(this.navParams.get('idProp'));
+    if (this.navParams.get('idProp') === '') {
+      this.todoService.addItem(this.taskName, this.taskDetail);
+    } else {
+      this.todoService.updateItem(this.navParams.get('idProp'), this.taskName, this.taskDetail);
+    }
     this.dismiss();
-    // console.log(this.todoService.getAllToDoList());
+    console.log(this.todoService.getAllToDoList());
   }
 
 }

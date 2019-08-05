@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToDo } from '../Models/ToDo.model';
+import { Observable } from 'rxjs';
 import { TodoService } from '../services/todo.service';
 import { ModalController } from '@ionic/angular';
 import { TodoModalPage } from '../todo-modal/todo-modal.page';
@@ -31,6 +32,12 @@ export class MyToDoPage implements OnInit {
         detailProp: detail ? detail : '',
       }
     });
+
+    modal.onDidDismiss().then(() => {
+      this.todo = this.todoService.getAllToDoList();
+    });
+    // this.todo = data;
+
     return await modal.present();
   }
 
